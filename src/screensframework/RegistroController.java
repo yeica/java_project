@@ -40,7 +40,7 @@ public class RegistroController implements Initializable, ControlledScreen {
                 "Hombre",
                 "Mujer"
                 );
-        cbAddsex.setItems(Options);
+        cbAddsex.setItems(options);
         
         // Escuchador para comprobar si pierdo el foco
         tfAddUser.focusedProperty().addListener(new ChangeListener<Boolean>() {
