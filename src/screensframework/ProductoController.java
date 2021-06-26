@@ -72,7 +72,7 @@ public class ProductoController implements Initializable, ControlledScreen {
             conexion = DBConnection.connect();
             
             // COMBOBOX DE CATEGORIA
-            String slqCategoria = "SELECT idcategoria, nombre_categoria FROM category";
+            String slqCategoria = "SELECT idcategoria, nombre_categoria FROM categoria";
             ResultSet resultadoCategoria = conexion.createStatement().executeQuery(slqCategoria);
             while(resultadoCategoria.next()) {
                 cbCategoriaProducto.getItems().add(resultadoCategoria.getString("nombre_categoria"));
@@ -139,7 +139,6 @@ public class ProductoController implements Initializable, ControlledScreen {
                 tablaProducto.getColumns().addAll(col);
                 // Asignamos un tamaño a ls columnnas
                 col.setMinWidth(100);
-                System.out.println("Column ["+i+"] ");
                 // Centrar los datos de la tabla
                 col.setCellFactory(new Callback<TableColumn<String,String>,TableCell<String,String>>(){
                     @Override
@@ -149,7 +148,6 @@ public class ProductoController implements Initializable, ControlledScreen {
                             protected void updateItem(Object t, boolean bln) {
                                 if(t != null){
                                     super.updateItem(t, bln);
-                                    System.out.println(t);
                                     setText(t.toString());
                                     setAlignment(Pos.CENTER); //Setting the Alignment
                                 }
@@ -266,7 +264,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         
         try {
             conexion = DBConnection.connect();
-            String sql = "INSERT INTO product "
+            String sql = "INSERT INTO producto"
                     + " (nombre_producto, precio, idcategoria, idmarca) "
                     + " VALUES (?, ?, ?, ?)";
             PreparedStatement estado = conexion.prepareStatement(sql);
@@ -331,7 +329,7 @@ public class ProductoController implements Initializable, ControlledScreen {
     @FXML
     private void eliminarProducto(ActionEvent event) {
         
-        int confirmarEliminar = JOptionPane.showConfirmDialog(null, "Realmente desea eliminar este producto??");
+        int confirmarEliminar = JOptionPane.showConfirmDialog(null, "¿Realmente desea eliminar este producto?");
         
         if (confirmarEliminar == 0) {
             try {
