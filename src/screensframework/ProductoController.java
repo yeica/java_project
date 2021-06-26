@@ -118,10 +118,10 @@ public class ProductoController implements Initializable, ControlledScreen {
             ResultSet rs = conexion.createStatement().executeQuery(sql);
             // Títulos de las columnas
             String[] titulos = {
-                    "Codigo",
+                    "Código",
                     "Nombre",
                     "Precio",
-                    "Categoria",
+                    "Categoría",
                     "Marca"
             };
             /**********************************
@@ -163,11 +163,10 @@ public class ProductoController implements Initializable, ControlledScreen {
             while(rs.next()){
                 //Iterate Row
                 ObservableList<String> row = FXCollections.observableArrayList();
-                for(int i = 1 ; i <= rs.getMetaData().getColumnCount()+1; i++){
+                for(int i = 1 ; i <= rs.getMetaData().getColumnCount(); i++){
                     //Iterate Column
                     row.add(rs.getString(i));
                 }
-                System.out.println("Row [1] added "+row );
                 producto.addAll(row);
             }
             //FINALLY ADDED TO TableView
@@ -282,6 +281,7 @@ public class ProductoController implements Initializable, ControlledScreen {
                 cargarDatosTabla();
             }
             estado.close();
+            this.limpiarCampos();
             
         } catch (SQLException e) {
             System.out.println("Error " + e);
@@ -370,6 +370,8 @@ public class ProductoController implements Initializable, ControlledScreen {
     private void buscarProducto(ActionEvent event) {
         
         tablaProducto.getItems().clear();
+        tablaProducto.refresh();
+      
         try {
             conexion = DBConnection.connect();
              String sql = "SELECT p.idproducto, "
@@ -387,17 +389,19 @@ public class ProductoController implements Initializable, ControlledScreen {
                     + " p.idcategoria = c.idcategoria AND "
                     + " p.idmarca = m.idmarca ORDER BY p.idproducto DESC";
             
-            ResultSet rs = conexion.createStatement().executeQuery(sql);
+            ResultSet rs = conexion.createStatement().executeQuery(sql);            
             
             while(rs.next()){
                 
                 ObservableList<String> row = FXCollections.observableArrayList();
+                
                 for(int i = 1 ; i <= rs.getMetaData().getColumnCount(); i++){
                    
                     row.add(rs.getString(i));
                 }
                 producto.addAll(row);
             }
+            
             tablaProducto.setItems(producto);
             rs.close();
             
