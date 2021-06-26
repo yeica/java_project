@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class ControlesBasicos {
     
     public void salirSistema() {
-        int pregunta = JOptionPane.showConfirmDialog(null, "Realmente desea salir del programa?");
+        int pregunta = JOptionPane.showConfirmDialog(null, "¿Realmente desea salir del programa?");
         
         if (pregunta == 0) {
             Platform.exit();

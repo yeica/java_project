@@ -51,4 +51,10 @@ public class ContenidoController implements Initializable, ControlledScreen {
     private void cerrarSesion(ActionEvent event) {
         controlador.setScreen(ScreensFramework.loginID);
     }
+    
+    @FXML
+    public void acercaDe(){
+        
+        JOptionPane.showMessageDialog(null, "Analizado por el Grupo #5 de Administración de Proyectos.", "Acerca de", JOptionPane.INFORMATION_MESSAGE);
+    }
 }

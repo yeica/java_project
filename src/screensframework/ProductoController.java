@@ -399,6 +399,17 @@ public class ProductoController implements Initializable, ControlledScreen {
     @FXML
     private void nuevoProducto(ActionEvent event) {
         
+        //Limpiar campos
+        
+        tfNombreProducto.setText("");
+        tfPrecioProducto.setText("");
+        tfBuscarProducto.setText("");
+        cbCategoriaProducto.setValue("");
+        cbMarcaProducto.setValue("");
+        lbCodigoProducto.setText("");
+        
+        //Desactivar botones
+        
         btAddProducto.setDisable(false);
         btEliminarProducto.setDisable(true);
         btModificarProducto.setDisable(true);
@@ -421,5 +432,11 @@ public class ProductoController implements Initializable, ControlledScreen {
     private void cerrarSesion(ActionEvent event) {
         
         controlador.setScreen(ScreensFramework.loginID);
+    }
+    
+    @FXML
+    public void acercaDe(){
+        
+        JOptionPane.showMessageDialog(null, "Analizado por el Grupo #5 de Administración de Proyectos.", "Acerca de", JOptionPane.INFORMATION_MESSAGE);
     }
 }

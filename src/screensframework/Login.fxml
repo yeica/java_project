@@ -92,8 +92,6 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="800.0" spacing="20.0">
           <children>
-            <Hyperlink text="Preferencias" />
-            <Hyperlink text="Ayuda" />
             <Hyperlink onAction="#irFormRegistro" text="Registro" />
           </children>
           <padding>

@@ -69,7 +69,7 @@
                     </Menu>
                     <Menu mnemonicParsing="false" text="Ayuda">
                       <items>
-                        <MenuItem mnemonicParsing="false" text="A cerca de" />
+                        <MenuItem mnemonicParsing="false" onAction="#acercaDe"  text="Acerca de" />
                       </items>
                     </Menu>
                   </menus>
@@ -88,11 +88,6 @@
                             <URL value="@../img_css/estilo1.css" />
                           </stylesheets>
                         </Button>
-                        <Hyperlink layoutX="356.0" layoutY="20.0" text="Vista de impresión" textFill="#0029ff" textOverrun="ELLIPSIS">
-                          <font>
-                            <Font size="11.0" />
-                          </font>
-                        </Hyperlink>
                       </children>
                     </AnchorPane>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="249.0">
@@ -159,8 +154,6 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="800.0" spacing="20.0">
           <children>
-            <Hyperlink text="Prenferencias" />
-            <Hyperlink text="Ayuda" />
             <Hyperlink onAction="#salir" text="Salir del sistema" />
           </children>
           <padding>
