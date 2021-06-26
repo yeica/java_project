@@ -78,7 +78,7 @@ public class LoginController implements Initializable, ControlledScreen {
             if (existeUsuario) {
                 tfUsuario.setText("");
                 tfPass.setText("");
-                controlador.setScreen(ScreensFramework.contenidoID);
+                controlador.setScreen(ScreensFramework.mantenimientoProductoID);
             } else {
                 JOptionPane.showMessageDialog(null, "Este usuario no está registrado");
             }

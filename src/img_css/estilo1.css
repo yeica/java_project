@@ -30,3 +30,13 @@
 .fondoanchor {
     -fx-background-image: url("fondo2.jpg");
 }
+
+.hyperlink{
+    -fx-text-fill: black;
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+}
+
+.hyperlink:hover{
+    -fx-text-fill: white;
+}

@@ -429,11 +429,6 @@ public class ProductoController implements Initializable, ControlledScreen {
     }
     
     @FXML
-    private void irInicioContenido(ActionEvent event) {
-        controlador.setScreen(ScreensFramework.contenidoID);
-    }
-    
-    @FXML
     private void salir(ActionEvent event) {
         this.controlesBasicos.salirSistema();
     }

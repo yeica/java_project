@@ -57,9 +57,6 @@ public class ScreensFramework extends Application {
     public static String registroID = "registro";
     public static String registroFile = "Registro.fxml";
     
-    public static String contenidoID = "contenido";
-    public static String contenidoFile = "Contenido.fxml";
-    
     public static String mantenimientoProductoID = "producto";
     public static String mantenimientoProductoFile = "Producto.fxml";
     
@@ -70,8 +67,7 @@ public class ScreensFramework extends Application {
         ScreensController mainContainer = new ScreensController();
         mainContainer.loadScreen(ScreensFramework.loginID, ScreensFramework.loginFile);
         mainContainer.loadScreen(ScreensFramework.registroID, ScreensFramework.registroFile);
-        mainContainer.loadScreen(ScreensFramework.contenidoID, ScreensFramework.contenidoFile);
-         mainContainer.loadScreen(ScreensFramework.mantenimientoProductoID, ScreensFramework.mantenimientoProductoFile);
+        mainContainer.loadScreen(ScreensFramework.mantenimientoProductoID, ScreensFramework.mantenimientoProductoFile);
         
         mainContainer.setScreen(ScreensFramework.loginID);
         
