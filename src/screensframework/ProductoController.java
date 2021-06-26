@@ -348,7 +348,18 @@ public class ProductoController implements Initializable, ControlledScreen {
                 }
 
                 estado.close();
-
+                
+                //Limpiar campos
+        
+                this.limpiarCampos();
+                
+                //Desactivar botones
+        
+                btEliminarProducto.setDisable(true);
+                btModificarProducto.setDisable(true);
+                btEliminarProducto.setStyle("-fx-background-color:grey");
+                btModificarProducto.setStyle("-fx-background-color:grey");
+                
             } catch (SQLException e) {
                 System.out.println("Error " + e);
             }
@@ -401,12 +412,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         
         //Limpiar campos
         
-        tfNombreProducto.setText("");
-        tfPrecioProducto.setText("");
-        tfBuscarProducto.setText("");
-        cbCategoriaProducto.setValue("");
-        cbMarcaProducto.setValue("");
-        lbCodigoProducto.setText("");
+        this.limpiarCampos();
         
         //Desactivar botones
         
@@ -438,5 +444,14 @@ public class ProductoController implements Initializable, ControlledScreen {
     public void acercaDe(){
         
         JOptionPane.showMessageDialog(null, "Analizado por el Grupo #5 de Administración de Proyectos.", "Acerca de", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void limpiarCampos(){
+        tfNombreProducto.setText("");
+        tfPrecioProducto.setText("");
+        tfBuscarProducto.setText("");
+        cbCategoriaProducto.setValue("");
+        cbMarcaProducto.setValue("");
+        lbCodigoProducto.setText("");
     }
 }
