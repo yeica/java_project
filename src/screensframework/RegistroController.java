@@ -126,8 +126,8 @@ public class RegistroController implements Initializable, ControlledScreen {
         // PREPARAMOS LA SENTENCIA PARA INSERTAR LOS DATOS
         try {
             conexion = DBConnection.connect();
-            String sql = "INSERT INTO usuario "
-                    + "(nombre, apellido, sexo, email, usuario, pass) "
+            String sql = "INSERT INTO usuarios"
+                    + "(nombre, apellido, sexo, correo, usuario, pass) "
                     + "VALUES (?, ?, ?, ?, ?, ?)";
             
             PreparedStatement estado = conexion.prepareStatement(sql);
@@ -148,15 +148,15 @@ public class RegistroController implements Initializable, ControlledScreen {
             
             int n = estado.executeUpdate();
             
-            if (n > 0) {
-                JOptionPane.showMessageDialog(null, "Fallo el registro");
+            if (n == 1) {
+                JOptionPane.showMessageDialog(null, "Registro exitoso");
             } 
             
             estado.close();
             
         } catch (SQLException e) {
             
-            JOptionPane.showMessageDialog(null, "Fallo el registro "+e);
+            JOptionPane.showMessageDialog(null, "Falló el registro "+e);
             
         }
     }

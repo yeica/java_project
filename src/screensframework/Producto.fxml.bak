@@ -69,7 +69,7 @@
                     </Menu>
                     <Menu mnemonicParsing="false" text="Ayuda">
                       <items>
-                        <MenuItem mnemonicParsing="false" text="A cerca de" />
+                        <MenuItem mnemonicParsing="false" text="Acerca de" />
                       </items>
                     </Menu>
                   </menus>
@@ -95,7 +95,7 @@
                       <children>
                         <Label layoutX="7.0" layoutY="77.0" text="Nombre" />
                         <Label layoutX="7.0" layoutY="110.0" text="Precio" />
-                        <Label layoutX="7.0" layoutY="143.0" text="Categoria" />
+                        <Label layoutX="7.0" layoutY="143.0" text="Categoría" />
                         <TextField id="tfProductoNombre" fx:id="tfNombreProducto" layoutX="55.0" layoutY="74.0" prefWidth="178.0" />
                         <TextField id="tfProductoPrecio" fx:id="tfPrecioProducto" layoutX="55.0" layoutY="107.0" prefWidth="178.0" />
                         <ComboBox id="cbProductoCategoria" fx:id="cbCategoriaProducto" layoutX="70.0" layoutY="142.0" prefHeight="21.0" prefWidth="163.0" promptText="Seleccionar">
@@ -155,7 +155,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="800.0" spacing="20.0">
           <children>
-            <Hyperlink text="Prenferencias" />
+            <Hyperlink text="Preferencias" />
             <Hyperlink text="Ayuda" />
             <Hyperlink onAction="#salir" text="Salir del sistema" />
           </children>

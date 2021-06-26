@@ -63,11 +63,11 @@
           <children>
             <Pane prefHeight="234.0" prefWidth="343.0" styleClass="paneles">
               <children>
-                <Label layoutX="45.0" layoutY="42.0" text="Login" />
-                <TextField fx:id="tfUsuario" layoutX="45.0" layoutY="58.0" prefHeight="24.960737500005052" prefWidth="250.0" promptText="nombre de usuario" style="-fx-border-color: #3399CC" />
-                <Label layoutX="45.0" layoutY="90.0" text="Password" />
-                <PasswordField fx:id="tfPass" layoutX="45.0" layoutY="105.0" prefHeight="24.960845947265625" prefWidth="250.0" promptText="Su contraseña" style="-fx-border-color: #3399CC" />
-                <Button layoutX="70.0" layoutY="174.0" mnemonicParsing="false" onAction="#iniciarSesion" prefWidth="84.0" styleClass="botones" text="Entrar" textFill="WHITE">
+                <Label layoutX="45.0" layoutY="42.0" text="Usuario" />
+                <TextField fx:id="tfUsuario" layoutX="45.0" layoutY="58.0" prefHeight="24.960737500005052" prefWidth="250.0" promptText="Ingrese su usuario" style="-fx-border-color: #3399CC" />
+                <Label layoutX="45.0" layoutY="90.0" text="Contraseña" />
+                <PasswordField fx:id="tfPass" layoutX="45.0" layoutY="105.0" prefHeight="24.960845947265625" prefWidth="250.0" promptText="Ingrese su contraseña" style="-fx-border-color: #3399CC" />
+                <Button layoutX="70.0" layoutY="174.0" mnemonicParsing="false" onAction="#iniciarSesion" prefWidth="90.0" styleClass="botones" text="Iniciar sesión" textFill="WHITE">
                   <stylesheets>
                     <URL value="@../img_css/estilo1.css" />
                   </stylesheets>
@@ -92,7 +92,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="800.0" spacing="20.0">
           <children>
-            <Hyperlink text="Prenferencias" />
+            <Hyperlink text="Preferencias" />
             <Hyperlink text="Ayuda" />
             <Hyperlink onAction="#irFormRegistro" text="Registro" />
           </children>
