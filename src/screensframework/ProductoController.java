@@ -70,7 +70,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         ObservableList<Object> marcas = FXCollections.observableArrayList();
         
         try {
-            conexion = DBConnection.connect();
+            conexion = DBConnection.getConnection();
             
             // COMBOBOX DE CATEGORIA
             String slqCategoria = "SELECT idcategoria, nombre_categoria FROM categoria";
@@ -102,7 +102,7 @@ public class ProductoController implements Initializable, ControlledScreen {
          producto = FXCollections.observableArrayList();
          
          try{
-            conexion = DBConnection.connect();
+            conexion = DBConnection.getConnection();
             //SQL FOR SELECTING ALL OF CUSTOMER
             String sql = "SELECT p.idproducto, "
                     + " p.nombre_producto, "
@@ -182,7 +182,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         
         try {
             
-            conexion = DBConnection.connect();
+            conexion = DBConnection.getConnection();
             String sql = "SELECT p.*, c.*, m.* "
                     + " FROM producto AS p, categoria AS c, marca AS m "
                     + " WHERE idproducto = "+valor+" AND "
@@ -290,7 +290,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         // PREPARAMOS LA SENTENCIA PARA INSERTAR LOS DATOS
         
         try {
-            conexion = DBConnection.connect();
+            conexion = DBConnection.getConnection();
             String sql = "INSERT INTO producto"
                     + " (nombre_producto, precio, idcategoria, idmarca) "
                     + " VALUES (?, ?, ?, ?)";
@@ -324,7 +324,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         int indiceMarca = cbMarcaProducto.getSelectionModel().getSelectedIndex() + 1;
         
         try {
-            conexion = DBConnection.connect();
+            conexion = DBConnection.getConnection();
             
             String sql = "UPDATE producto "
                     + " SET nombre_producto = ?, "
@@ -361,7 +361,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         
         if (confirmarEliminar == 0) {
             try {
-                conexion = DBConnection.connect();
+                conexion = DBConnection.getConnection();
 
                 String sql = "DELETE FROM producto WHERE idproducto = "+lbCodigoProducto.getText()+"";
 
@@ -401,7 +401,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         tablaProducto.refresh();
       
         try {
-            conexion = DBConnection.connect();
+            conexion = DBConnection.getConnection();
              String sql = "SELECT p.idproducto, "
                     + " p.nombre_producto, "
                     + " p.precio, "

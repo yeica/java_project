@@ -22,15 +22,15 @@ public class DBConnection {
             System.err.println("Error: "+iae.getMessage());
 	}
         
-        conn = DriverManager.getConnection(url,user,pass);
-        return conn;
+        return conn = DriverManager.getConnection(url,user,pass);
     }
 	
-    public static Connection getConnection() throws SQLException, ClassNotFoundException{
-        if(conn == null && conn.isClosed()){
-            connect();
+    public static Connection getConnection() throws SQLException {
+        if(conn != null && !conn.isClosed()){
+            return DBConnection.conn;
         }
-        
-        return conn;
+        else{
+            return DBConnection.connect();
+        }
     }
 }

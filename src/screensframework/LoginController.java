@@ -66,7 +66,7 @@ public class LoginController implements Initializable, ControlledScreen {
         //______________________________________________________
         /* SE HACE EL LLAMADO AL MODELO PARA ENTRAR AL SISTEMA */
         try {
-            conexion = DBConnection.connect();
+            conexion = DBConnection.getConnection();
             String sql = "SELECT * FROM "
                     + " usuarios WHERE "
                     + " usuario = '"+tfUsuario.getText()+"' AND "
