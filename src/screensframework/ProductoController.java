@@ -34,6 +34,7 @@ public class ProductoController implements Initializable, ControlledScreen {
     
     ScreensController controlador;
     private ControlesBasicos controlesBasicos = new ControlesBasicos();
+    private Validaciones validation = new Validaciones();
     @FXML private Button btAddProducto;
     @FXML private Button btModificarProducto;
     @FXML private Button btEliminarProducto;
@@ -261,6 +262,33 @@ public class ProductoController implements Initializable, ControlledScreen {
         int indiceCategoria = cbCategoriaProducto.getSelectionModel().getSelectedIndex() + 1;
         int indiceMarca = cbMarcaProducto.getSelectionModel().getSelectedIndex() + 1;
         
+        //______________________________________________________________
+        // VALIDACIONES
+        if (!validation.validarVacios(tfNombreProducto.getText(), "NOMBRE PRODUCTO")) {
+            return;
+        }
+        
+        if (!validation.validarVacios(tfPrecioProducto.getText(), "PRECIO PRODUCTO")) {
+            return;
+        }
+        
+        if (cbCategoriaProducto.getValue() == null) {
+            JOptionPane.showMessageDialog(null, "Selecciona la categoría");
+            return;
+        }
+        
+        if (cbMarcaProducto.getValue() == null) {
+            JOptionPane.showMessageDialog(null, "Selecciona la marca");
+            return;
+        }
+        
+        if (!validation.soloNumeros(tfPrecioProducto.getText(), "PRECIO PRODUCTO")) {
+            return;
+        }
+        
+        //______________________________________________________________
+        // PREPARAMOS LA SENTENCIA PARA INSERTAR LOS DATOS
+        
         try {
             conexion = DBConnection.connect();
             String sql = "INSERT INTO producto"
@@ -449,8 +477,8 @@ public class ProductoController implements Initializable, ControlledScreen {
         tfNombreProducto.setText("");
         tfPrecioProducto.setText("");
         tfBuscarProducto.setText("");
-        cbCategoriaProducto.setValue("");
-        cbMarcaProducto.setValue("");
+        cbCategoriaProducto.setValue(null);
+        cbMarcaProducto.setValue(null);
         lbCodigoProducto.setText("");
     }
 }

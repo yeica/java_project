@@ -15,7 +15,7 @@ public class Validaciones {
     /******* VALIDAR VACIOS ************/
     public boolean validarVacios(String datos, String nombreCampo) {
         
-        if (datos.equals("")) {
+        if (datos.equals("") || datos.equals(null)) {
             
             JOptionPane.showMessageDialog(null, "El campo "+nombreCampo+" no puede estar vacio");
             return false;
@@ -66,13 +66,13 @@ public class Validaciones {
     }
     
     /****** SOLO NUMEROS *********/
-    public boolean soloNumeros(String datos) {
+    public boolean soloNumeros(String datos, String nombreCampo) {
         
         p = Pattern.compile("^[0-9A-Z]*$");
         m = p.matcher(datos); 
         if (!datos.isEmpty()) {
             if (!m.find()) {
-                JOptionPane.showMessageDialog(null, "Solo se admiten numeros");
+                JOptionPane.showMessageDialog(null, "Solo se admiten números en " +nombreCampo);
                 return false;
             }
         }

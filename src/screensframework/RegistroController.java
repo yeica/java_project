@@ -138,13 +138,7 @@ public class RegistroController implements Initializable, ControlledScreen {
             estado.setString(5, tfAddUser.getText());
             estado.setString(6, DigestUtils.sha1Hex(tfAddPass.getText()));
             
-            tfAddNombre.setText("");
-            tfAddApellido.setText("");
-            tfAddCorreo.setText("");
-            tfAddUser.setText("");
-            tfAddPass.setText("");
-            tfConfirmar.setText("");
-            cbAddsex.setValue("");
+            this.limpiarCampos();
             
             int n = estado.executeUpdate();
             
@@ -163,13 +157,8 @@ public class RegistroController implements Initializable, ControlledScreen {
     
     @FXML
     private void regresarPrincipal(ActionEvent event) {
-        tfAddNombre.setText("");
-        tfAddApellido.setText("");
-        tfAddCorreo.setText("");
-        tfAddUser.setText("");
-        tfAddPass.setText("");
-        tfConfirmar.setText("");
-        cbAddsex.setValue("");
+        
+        this.limpiarCampos();
         
         tfAddUser.setStyle("-fx-border-color: #3399CC;");
         
@@ -179,5 +168,15 @@ public class RegistroController implements Initializable, ControlledScreen {
     @FXML
     private void salir(ActionEvent event) {
         this.controlesBasicos.salirSistema();
+    }
+    
+    private void limpiarCampos(){
+        tfAddNombre.setText("");
+        tfAddApellido.setText("");
+        tfAddCorreo.setText("");
+        tfAddUser.setText("");
+        tfAddPass.setText("");
+        tfConfirmar.setText("");
+        cbAddsex.setValue(null);
     }
 }
